@@ -1,0 +1,25 @@
+#menu {
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    z-index: 9999;
+    background-color: black;
+    padding: 5px;
+}
+
+#audio {
+    width: 100%;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex * {
+    flex: auto;
+}
+
+#token {
+    width: 100%;
+    margin: 0 0 7px;
+}
