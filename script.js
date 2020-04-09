@@ -97,7 +97,7 @@ function speakRus(mess, prov) {
                 if (data.constructor === String) {
                     log.innerHTML = `<p style="color:#f55">${data}</p>`
                     speakError = 1
-                    throw data
+                    rej(data)
                 }
                 else {
                     let blob = new Blob([data], { type: "audio/ogg" })
@@ -107,8 +107,8 @@ function speakRus(mess, prov) {
                     res()
                     log.innerHTML = `<p style="color:green">ok</p>`
                 }
-            }).catch(e => { console.log(e); rej() })
-    })
+            }).catch(e => { console.log(e) })
+    }).catch(e => { console.log("rej google", e) })
 }
 
 ///////////////////////////////////// GOOGLE ENG
@@ -145,11 +145,11 @@ function speakEng(mess, prov) {
                 } else {
                     log.innerHTML = `<p style="color:#f55">${data}</p>`
                     speakError = 1
-                    throw data
+                    rej(data)
                 }
                 res()
-            }).catch(e => { console.log(e); rej() })
-    })
+            }).catch(e => { console.log(e) })
+    }).catch(e => { console.log("rej google", e) })
 }
 
 ///////////////////////////// webSocket /////////////////////
@@ -200,7 +200,7 @@ async function messag(mess) {
                 if (speakError) brake
 
             }
-            if (speakError) SoundError.play()
+        if (speakError) SoundError.play()
         if (data.arrStr.length) ws.send(`{"type":"ready"}`)   // отрпавляю готово если данные были.
     }
 
