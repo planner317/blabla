@@ -198,7 +198,7 @@ async function messag(mess) {
                 if (speakError) brake
 
             }
-
+            if (speakError) SoundError.play()
         if (data.arrStr.length) ws.send(`{"type":"ready"}`)   // отрпавляю готово если данные были.
     }
 
