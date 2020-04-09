@@ -96,7 +96,7 @@ function speakRus(mess, prov) {
             .then(data => {
                 if (data.constructor === String) {
                     log.innerHTML = `<p style="color:#f55">${data}</p>`
-                    soundError = 1
+                    speakError = 1
                 }
                 else {
                     let blob = new Blob([data], { type: "audio/ogg" })
@@ -143,7 +143,7 @@ function speakEng(mess, prov) {
                     if (prov) proverka()
                 } else {
                     log.innerHTML = `<p style="color:#f55">${data}</p>`
-                    soundError = 1
+                    speakError = 1
                 }
                 res()
             }).catch(e => { console.log(e); rej() })
@@ -168,7 +168,9 @@ function initWebSocket() {
         initWebSocket()
     }
 }
-let nSound = 0, soundError
+let nSound = 0, speakError
+let SoundError = new Audio(`https://planner317.github.io/blabla/error.wav`)
+
 async function messag(mess) {
     //  приходит массив из строк на анг или русском
     let data = JSON.parse(mess.data)
@@ -176,7 +178,7 @@ async function messag(mess) {
     if (data.type == "write sound") {
         nSound = 0; audioArr = [];    //очищаю готовый результаты звуков
         audio.pause();
-        soundError = 0;
+        speakError = 0;
 
         if (self.location.host == "cloud.yandex.ru") {
             let a1 = new Audio()
@@ -186,21 +188,21 @@ async function messag(mess) {
 
             for (let i = 0; i < data.arrStr.length; i++) {
                 await speakRus(data.arrStr[i])
-                if (soundError) brake
+                if (speakError) brake
             }
         }
 
         if (self.location.host == "cloud.google.com")
             for (let i = 0; i < data.arrStr.length; i++) {
                 await speakEng(data.arrStr[i])
-                if (soundError) brake
+                if (speakError) brake
 
             }
 
         if (data.arrStr.length) ws.send(`{"type":"ready"}`)   // отрпавляю готово если данные были.
     }
 
-    if (soundError) {
+    if (speakError) {
         ws.send(JSON.stringify({ type: "end" }))
         return
     }
