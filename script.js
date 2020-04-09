@@ -97,6 +97,7 @@ function speakRus(mess, prov) {
                 if (data.constructor === String) {
                     log.innerHTML = `<p style="color:#f55">${data}</p>`
                     speakError = 1
+                    throw data
                 }
                 else {
                     let blob = new Blob([data], { type: "audio/ogg" })
@@ -144,6 +145,7 @@ function speakEng(mess, prov) {
                 } else {
                     log.innerHTML = `<p style="color:#f55">${data}</p>`
                     speakError = 1
+                    throw data
                 }
                 res()
             }).catch(e => { console.log(e); rej() })
