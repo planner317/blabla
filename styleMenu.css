@@ -1,0 +1,39 @@
+#menu {
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    z-index: 9999;
+    background-color: black;
+    padding: 5px;
+}
+#menu span{
+    flex: inherit;
+    width: 40px;
+    text-align: center;
+}
+#menu select{
+    flex: initial;
+}
+#audio {
+    width: 100%;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex * {
+    flex: auto;
+}
+#menu button{
+    width: 29%;
+    margin: 0 1% 0 0;
+}
+#token {
+    width: 70%;
+    margin: 0 0 7px;
+}
+#log *{
+    font-size: 40px;
+    line-height: 40px;
+}
