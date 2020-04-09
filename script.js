@@ -38,6 +38,7 @@ function init() {
     ///////////////////////// ДЛЯ GOOGLE ////////////////////
     if (self.location.host == "cloud.google.com") {
         voice.children[6].remove()
+        voice.selectedIndex = 3;
         lang.onclick = select
         voice.onclick = select
         function select() {
