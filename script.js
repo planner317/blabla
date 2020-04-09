@@ -1,5 +1,5 @@
 // ПОЛУЧИАЮ МЕНЮ ИЗ GIT И ВСТАВЛЯЮ В BODY
-fetch("https://blabla/data/menu.html")
+fetch("https://planner317.github.io/blabla/menu.html")
     .then(res => res.text())
     .then(html => {
         document.body.innerHTML += html
