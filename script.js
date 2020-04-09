@@ -11,6 +11,7 @@ let noSound = `data:audio/wav;base64,UklGRqwEAABXQVZFZm10IBAAAAABAAEAIlYAACJWAAA
 let audioArr = [];
 
 function init() {
+    initWebSocket()
     console.log("onLoad", document.readyState);
     //////////////////////// ДЛЯ YANDEX ///////////////////
     if (self.location.host == "cloud.yandex.ru") {
@@ -204,4 +205,3 @@ async function messag(mess) {
         }
     }
 }
-initWebSocket()
