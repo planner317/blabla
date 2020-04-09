@@ -190,14 +190,14 @@ async function messag(mess) {
 
             for (let i = 0; i < data.arrStr.length; i++) {
                 await speakRus(data.arrStr[i])
-                if (speakError) brake
+                if (speakError) break
             }
         }
 
         if (self.location.host == "cloud.google.com")
             for (let i = 0; i < data.arrStr.length; i++) {
                 await speakEng(data.arrStr[i])
-                if (speakError) brake
+                if (speakError) break
 
             }
         if (speakError) SoundError.play()
