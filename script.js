@@ -19,7 +19,7 @@ function init() {
         speed.max = 2
         speed.value = 1
         audio.volume = 0.7
-        token.value = "f04a7b8343a32b94c3b978e34ca5361bf2f83183:1586378619"
+        token.value = "8f2be7c9f610325a5f85af81cb7bf07d84656cc7:1586498104"
         voice.children[0].innerHTML = "filipp"
         voice.children[1].innerHTML = "alena"
         voice.children[2].innerHTML = "alyss"
@@ -27,6 +27,7 @@ function init() {
         voice.children[4].innerHTML = "oksana"
         voice.children[5].innerHTML = "zahar"
         voice.children[6].innerHTML = "ermil"
+
 
         lang.children[0].innerHTML = "good"
         lang.children[1].innerHTML = "evil"
