@@ -17,13 +17,13 @@ function init() {
     }
 
     setInterval(() => {
-        if (audio.curentTime > audio.duration - 0.5 && flag) {
+        if (audio.currentTime > audio.duration - 0.5 && flag) {
             ws.send(JSON.stringify({ type: "end" }))
             console.log("конец ", nSound);
             flag = 0;
         }
     }, 50)
-    
+
     initWebSocket()
     console.log("onLoad", document.readyState);
     //////////////////////// ДЛЯ YANDEX ///////////////////
