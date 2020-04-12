@@ -32,7 +32,7 @@ function init() {
         speed.max = 2
         speed.value = 1
         audio.volume = 0.7
-        token.value = "8f2be7c9f610325a5f85af81cb7bf07d84656cc7:1586498104"
+        token.value = "eee614c7d08c588aa08cc7f5722e0194dfba3cc1:1586674798"
         voice.children[0].innerHTML = "filipp"
         voice.children[1].innerHTML = "alena"
         voice.children[2].innerHTML = "alyss"
@@ -153,7 +153,7 @@ function speakEng(mess, prov) {
                 if (data[0] == `{`) data = JSON.parse(data)
 
                 if (data.audioContent) {
-                    audioArr.push(`data:audio/wav;base64,` + data.audioContent)
+                    audioArr.push(`data:audio/x-wav;base64,` + data.audioContent)
                     log.innerHTML = `<p style="color:green">ok</p>`
                     if (prov) proverka()
                 } else {
