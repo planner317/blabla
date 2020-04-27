@@ -1,20 +1,30 @@
+body, html{
+    background: #000;
+}
 #menu {
     width: 100%;
     top: 0px;
     z-index: 9999;
     background-color: black;
     padding: 5px;
+    position: absolute;
 }
 #menu span{
     flex: inherit;
     width: 40px;
     text-align: center;
+    color: white;
 }
 #menu select{
     flex: initial;
 }
 #audio {
     width: 100%;
+}
+#playlist audio{
+    height: 15px;
+    width: 222px;
+background: #0a0;
 }
 
 .flex {

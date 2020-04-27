@@ -7,7 +7,7 @@ let c= require("chalk")
 let paste = buffer.paste()
 
 ////////// стераю все лишнии символы
-let result = paste.replace(/[^а-я)(ё+=.,0-9a-z]/gi, " ")
+let result = paste.replace(/[^а-яё)(+=.,0-9a-z]/gi, " ")
 
 ///////// убираю точку между букв
 result = result.replace(/([^\s\d])\.([^\s\d])/gi, "$1 $2")
