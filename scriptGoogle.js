@@ -1,6 +1,6 @@
 // ПОЛУЧИАЮ МЕНЮ ИЗ GIT И ВСТАВЛЯЮ В BODY
-// fetch("https://planner317.github.io/blabla/menu.html")
-fetch("https://blabla/data/menuGoogle.html")
+fetch("https://planner317.github.io/blabla/menuGoogle.html")
+// fetch("https://blabla/data/menuGoogle.html")
     .then(res => res.text())
     .then(html => {
         document.body.innerHTML = html + document.body.innerHTML
